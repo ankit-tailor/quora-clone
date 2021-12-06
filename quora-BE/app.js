@@ -6,9 +6,10 @@ const app = express();
 //import routes
 const authenticationRoutes = require("./routes/authentication");
 const userRoutes = require("./routes/user");
+const { CONSTANTS } = require("./utils/constants");
 
 // PORT number
-const PORT = 3000;
+const PORT = CONSTANTS.port;
 
 //Middlewares
 app.use(cors());
