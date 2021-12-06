@@ -14,11 +14,11 @@ model User {
   id Int @default(autoincrement()) @id
   email String @unique
   password String
-  firstName String
-  lastName String
+  firstName String?
+  lastName String?
   questions Question[]
   opinions Opinion[]
-  bio String
+  bio String?
 }
 
 model Question {

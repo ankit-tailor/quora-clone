@@ -3,7 +3,7 @@ const JWT = require("jsonwebtoken");
 const { validationResult } = require("express-validator");
 
 const { PrismaClient } = require("@prisma/client");
-const DB_REFRENCE = new PrismaClient();
+const PRISMA_CLIENT = new PrismaClient();
 
 const { CONSTANTS } = require("../utils/constants");
 
@@ -17,7 +17,7 @@ exports.signup = async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const user = await DB_REFRENCE.user.findUnique({
+    const user = await PRISMA_CLIENT.user.findUnique({
       where: { email: email },
     });
 
@@ -26,8 +26,12 @@ exports.signup = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = await DB_REFRENCE.user.create({
-      data: { email: email, password: hashedPassword },
+    const newUser = await PRISMA_CLIENT.user.create({
+      data: {
+        email: email,
+        password: hashedPassword,
+      },
+      select: { email: true },
     });
 
     if (!newUser) {
@@ -57,7 +61,7 @@ exports.signin = async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const user = await DB_REFRENCE.user.findUnique({
+    const user = await PRISMA_CLIENT.user.findUnique({
       where: { email: email },
     });
 
