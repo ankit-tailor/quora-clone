@@ -5,9 +5,9 @@
 - [x] Initial Setup
 - [x] Prisma and mysql setup
 - [x] Authentication - signin / signup
-- [x] User - CRUD - getUserById / update user profile / change password
-- [ ] Questions post
-- [ ] Opinions / Reply to questions
+- [x] User - CRUD - getUserById
+- [x] Questions post
+- [x] Opinions / Reply to questions
 - [ ] Bookmark Questions
 
 ## Database Schema

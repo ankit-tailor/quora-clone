@@ -19,12 +19,14 @@ model User {
   questions Question[]
   opinions Opinion[]
   bio String?
+  votes Vote[]
 }
 
 model Question {
   id Int @default(autoincrement()) @id
   questionTitle String
-  author User @relation(fields: [authorId], references: [id])
+  createdAt DateTime @default(now())
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
   authorId Int
   opinion Opinion[]
 }
@@ -32,8 +34,19 @@ model Question {
 model Opinion {
   id Int @default(autoincrement()) @id
   opinionContent String
-  author User @relation(fields: [authorId], references: [id])
+  createdAt DateTime @default(now())
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
   authorId Int
-  question Question @relation(fields: [questionId], references: [id])
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
   questionId Int
+  votes Vote[]
+}
+
+model Vote {
+  id Int @default(autoincrement()) @id
+  vote Boolean
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId Int
+  opinion Opinion @relation(fields: [opinionId], references: [id], onDelete: Cascade)
+  opinionId Int
 }
