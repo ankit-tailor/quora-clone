@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import {
   BiChevronDown,
@@ -33,18 +34,23 @@ export const QuestionCard = () => {
         aspernatur corrupti!
       </p>
       <div className="flex items-center justify-between">
-        <Button
-          variant="secondary"
-          color="indigo"
-          className="sm:inline my-2 py-2 px-2 sm:px-6 rounded-md shadow-2xl"
-          type="submit"
-        >
-          <span className="mx-2">View more</span>
-          <BiChevronDown
-            // @ts-ignore
-            className="inline text-2xl"
-          />
-        </Button>
+        {/* TODO: */}
+        <Link href={`/question/3`}>
+          <a>
+            <Button
+              variant="secondary"
+              color="indigo"
+              className="sm:inline my-2 py-2 px-2 sm:px-6 rounded-md shadow-2xl"
+              type="submit"
+            >
+              <span className="mx-2">View more</span>
+              <BiChevronDown
+                // @ts-ignore
+                className="inline text-2xl"
+              />
+            </Button>
+          </a>
+        </Link>
         <BiShareAlt
           // @ts-ignore
           className="cursor-pointer text-2xl"
