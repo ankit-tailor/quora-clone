@@ -4,4 +4,5 @@ export interface IButtonProps {
   children?: JSX.Element[] | JSX.Element | string | number;
   className?: string;
   onClick?: () => void;
+  type?: "submit";
 }
