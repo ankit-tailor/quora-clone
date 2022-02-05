@@ -3,9 +3,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 // import { Link, useMatch } from "react-router-dom";
 
-export const NavbarItem = ({ icon, name, route }: any) => {
+export const NavbarItem = React.memo(function NavbarItem({
+  icon,
+  name,
+  route,
+}: any) {
   const router = useRouter();
-  const isActiveLink = router.pathname;
+  const isActiveLink = router.pathname === route;
 
   return (
     <Link href={route}>
@@ -21,4 +25,4 @@ export const NavbarItem = ({ icon, name, route }: any) => {
       </a>
     </Link>
   );
-};
+});
