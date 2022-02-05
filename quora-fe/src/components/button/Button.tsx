@@ -4,21 +4,27 @@ import { IButtonProps } from "./types";
 const getClassNameByBtnVariant = (variant?: string, color?: string): string => {
   if (variant === "primary") {
     return `bg-${color}`;
+  } else {
+    return `border-2 border-${color}`;
   }
-  return `border-2 border-${color}`;
 };
 
-export const Button: FC<IButtonProps> = ({
+export const Button: FC<IButtonProps> = React.memo(function Button({
   variant,
   color,
   children,
   className,
   ...props
-}) => {
+}) {
   const modefiedClassName = `${getClassNameByBtnVariant(
     variant,
     color
   )} ${className} cursor-pointer`;
+  console.log("rendered");
 
-  return <button className={modefiedClassName}>{children}</button>;
-};
+  return (
+    <button className={modefiedClassName} {...props}>
+      {children}
+    </button>
+  );
+});
