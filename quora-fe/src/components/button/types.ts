@@ -3,4 +3,5 @@ export interface IButtonProps {
   color?: string;
   children?: JSX.Element[] | JSX.Element | string | number;
   className?: string;
+  onClick?: () => void;
 }
