@@ -20,7 +20,6 @@ export const Button: FC<IButtonProps> = React.memo(function Button({
     variant,
     color
   )} ${className} cursor-pointer`;
-  console.log("rendered");
 
   return (
     <button className={modefiedClassName} {...props}>
