@@ -40,6 +40,15 @@ const Setting: NextPage = () => {
               />
             )}
           </section>
+          <section className="p-6 my-6 shadow-xl w-full h-auto rounded-xl dark:bg-primaryDark bg-primaryLight dark:text-primaryLight text-primaryDark">
+            <Button
+              variant="primary"
+              color="indigo"
+              className="text-primaryLight py-2 px-2 rounded-md shadow-2xl"
+            >
+              Change password
+            </Button>
+          </section>
         </div>
       </Layout>
     </div>
