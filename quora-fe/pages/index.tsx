@@ -46,7 +46,7 @@ const Home: NextPage = () => {
               className="w-3/4 mx-auto border-t-0 leading-3 my-10 text-center text-lightGray bg-lightGray"
               style={{ lineHeight: "0.1rem" }}
             >
-              <span className="bg-primaryLight px-4 dark:bg-secondaryDark">
+              <span className="bg-secondaryLight px-4 dark:bg-secondaryDark">
                 No Questions
               </span>
             </p>
