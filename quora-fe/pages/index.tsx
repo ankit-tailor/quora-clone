@@ -20,7 +20,7 @@ const Home: NextPage = () => {
                 className="text-3xl sm:text-4xl dark:text-primaryLight text-indigo"
               />
               <input
-                className="px-4 font-extrabold text-md sm:text-xl py-5 w-full dark:bg-primaryDark bg-primaryLight  border-0 outline-none"
+                className="text-primaryDark dark:text-primaryLight px-4 font-extrabold text-md sm:text-xl py-5 w-full dark:bg-primaryDark bg-primaryLight  border-0 outline-none"
                 type="text"
                 placeholder="What's your question?"
               />
