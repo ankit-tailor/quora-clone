@@ -1,6 +1,6 @@
 import { BiBookmark, BiHome, BiFace, BiSliderAlt } from "react-icons/bi";
 
-export const Routes = [
+export const ROUTES = [
   {
     name: "Home",
     route: "/",
