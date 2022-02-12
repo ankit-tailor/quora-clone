@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { FcRules } from "react-icons/fc";
 import { NavbarItem } from "../NavbarItem/NavbarItem";
-import { Routes } from "../../../utils/constatns";
+import { ROUTES } from "../../../utils/constants";
 
 export const Sidebar = React.memo(function Sidebar() {
   return (
@@ -19,7 +19,7 @@ export const Sidebar = React.memo(function Sidebar() {
         </a>
       </Link>
       <div className="flex flex-col justify-center">
-        {Routes.map(({ id, name, icon, route }) => (
+        {ROUTES.map(({ id, name, icon, route }) => (
           <NavbarItem key={id} name={name} icon={icon} route={route} />
         ))}
       </div>
